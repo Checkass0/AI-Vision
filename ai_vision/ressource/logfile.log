@@ -1,0 +1,22 @@
+2023-02-23 13:20:18,332 | WARNING:  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2023-02-23 13:20:18,333 | INFO:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2023-02-23 13:20:23,835 | DEBUG: Starting new HTTP connection (1): localhost
+2023-02-23 13:20:23,882 | INFO: 127.0.0.1 - - [23/Feb/2023 13:20:23] "[32mPOST /data HTTP/1.1[0m" 308 -
+2023-02-23 13:20:23,884 | DEBUG: http://localhost:5000 "POST /data HTTP/1.1" 308 260
+2023-02-23 13:20:23,925 | DEBUG: Resetting dropped connection: localhost
+2023-02-23 13:20:23,937 | INFO: 127.0.0.1 - - [23/Feb/2023 13:20:23] "POST /data/ HTTP/1.1" 200 -
+2023-02-23 13:20:23,938 | INFO: Starting Detection
+2023-02-23 13:20:23,939 | DEBUG: http://localhost:5000 "POST /data/ HTTP/1.1" 200 6
+2023-02-23 13:20:25,022 | DEBUG: Starting new HTTP connection (1): localhost
+2023-02-23 13:20:25,125 | INFO: 127.0.0.1 - - [23/Feb/2023 13:20:25] "[32mPOST /data HTTP/1.1[0m" 308 -
+2023-02-23 13:20:25,150 | DEBUG: http://localhost:5000 "POST /data HTTP/1.1" 308 260
+2023-02-23 13:20:25,193 | DEBUG: Resetting dropped connection: localhost
+2023-02-23 13:20:25,251 | INFO: 127.0.0.1 - - [23/Feb/2023 13:20:25] "POST /data/ HTTP/1.1" 200 -
+2023-02-23 13:20:25,300 | DEBUG: http://localhost:5000 "POST /data/ HTTP/1.1" 200 6
+2023-02-23 13:20:25,397 | INFO: Detection was closed
+2023-02-23 13:20:25,412 | INFO: Starting Detection
+2023-02-23 13:21:16,381 | DEBUG: Starting new HTTP connection (1): localhost
+2023-02-23 13:21:16,406 | INFO: 127.0.0.1 - - [23/Feb/2023 13:21:16] "GET /shutdown HTTP/1.1" 200 -
+2023-02-23 13:21:16,407 | DEBUG: http://localhost:5000 "GET /shutdown HTTP/1.1" 200 16
+2023-02-23 13:21:16,414 | INFO: Detection was closed

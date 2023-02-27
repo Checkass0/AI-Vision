@@ -1,0 +1,15 @@
+{
+    "video_source": "v4l2:///dev/video0",
+    "video_sink": "intervideo://0",
+    "input_blob": "input_0",
+    "output_blob": "output_0",
+    "width": 1920,
+    "height": 1080,
+    "threshold": 0.6,
+    "buffer_size": 20,
+    "parallel_detections": 5,
+    "ai_vision_dir": "~/AI_Vision",
+    "model": "BR167_Board",
+    "exposurecompensation": 0.5,
+    "rotate_180": false
+}
