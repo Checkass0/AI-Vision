@@ -1,0 +1,90 @@
+{
+    "name": "BR167_Board",
+    "plug": "BR167",
+    "holes": [
+        {
+            "expected": "sw_bl",
+            "chamber": 9
+        },
+        {
+            "expected": "gn",
+            "chamber": 36
+        },
+        {
+            "expected": "br_ge",
+            "chamber": 37
+        },
+        {
+            "expected": "br_ge",
+            "chamber": 38
+        },
+        {
+            "expected": "gr",
+            "chamber": 39
+        },
+        {
+            "expected": "rt",
+            "chamber": 78
+        },
+        {
+            "expected": "ws",
+            "chamber": 79
+        },
+        {
+            "expected": "br_ws",
+            "chamber": 80
+        },
+        {
+            "expected": "bl_ge",
+            "chamber": 81
+        },
+        {
+            "expected": "gn_ge",
+            "chamber": 86
+        },
+        {
+            "expected": "br_vi",
+            "chamber": 87
+        },
+        {
+            "expected": "br_gr",
+            "chamber": 88
+        },
+        {
+            "expected": "sw_gr",
+            "chamber": 89
+        },
+        {
+            "expected": "bl",
+            "chamber": 90
+        },
+        {
+            "expected": "br_bl",
+            "chamber": 91
+        },
+        {
+            "expected": "br_sw",
+            "chamber": 92
+        },
+        {
+            "expected": "sw",
+            "chamber": 93
+        },
+        {
+            "expected": "vi",
+            "chamber": 98
+        },
+        {
+            "expected": "vi_ws",
+            "chamber": 99
+        },
+        {
+            "expected": "rs_gn",
+            "chamber": 101
+        },
+        {
+            "expected": "rt_bl",
+            "chamber": 103
+        }
+    ]
+}

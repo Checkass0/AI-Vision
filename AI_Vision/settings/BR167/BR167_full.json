@@ -1,0 +1,298 @@
+{
+    "name": "BR167",
+    "plug": "BR167",
+    "holes": [
+        {
+            "expected": "vi",
+            "chamber": 4
+        },
+        {
+            "expected": "rs_ge",
+            "chamber": 5
+        },
+        {
+            "expected": "rs_sw",
+            "chamber": 8
+        },
+        {
+            "expected": "sw_bl",
+            "chamber": 11
+        },
+        {
+            "expected": "sw_bl",
+            "chamber": 13
+        },
+        {
+            "expected": "or_vi",
+            "chamber": 16
+        },
+        {
+            "expected": "br_ws",
+            "chamber": 17
+        },
+        {
+            "expected": "sw_ws",
+            "chamber": 18
+        },
+        {
+            "expected": "or_gn",
+            "chamber": 21
+        },
+        {
+            "expected": "br_gn",
+            "chamber": 22
+        },
+        {
+            "expected": "sw",
+            "chamber": 23
+        },
+        {
+            "expected": "br_ge",
+            "chamber": 24
+        },
+        {
+            "expected": "sw_bl",
+            "chamber": 25
+        },
+        {
+            "expected": "gr",
+            "chamber": 26
+        },
+        {
+            "expected": "gr_ws",
+            "chamber": 27
+        },
+        {
+            "expected": "gn_ge",
+            "chamber": 32
+        },
+        {
+            "expected": "vi",
+            "chamber": 33
+        },
+        {
+            "expected": "sw",
+            "chamber": 34
+        },
+        {
+            "expected": "gn_ge",
+            "chamber": 35
+        },
+        {
+            "expected": "gr_ge",
+            "chamber": 36
+        },
+        {
+            "expected": "sw",
+            "chamber": 37
+        },
+        {
+            "expected": "gn",
+            "chamber": 38
+        },
+        {
+            "expected": "br_ge",
+            "chamber": 39
+        },
+        {
+            "expected": "br_ge",
+            "chamber": 40
+        },
+        {
+            "expected": "gr",
+            "chamber": 41
+        },
+        {
+            "expected": "rs",
+            "chamber": 46
+        },
+        {
+            "expected": "br_ge",
+            "chamber": 47
+        },
+        {
+            "expected": "br",
+            "chamber": 50
+        },
+        {
+            "expected": "sw_ge",
+            "chamber": 51
+        },
+        {
+            "expected": "sw_ge",
+            "chamber": 52
+        },
+        {
+            "expected": "vi",
+            "chamber": 53
+        },
+        {
+            "expected": "vi_ge",
+            "chamber": 54
+        },
+        {
+            "expected": "br",
+            "chamber": 55
+        },
+        {
+            "expected": "gr",
+            "chamber": 56
+        },
+        {
+            "expected": "vi_ge",
+            "chamber": 57
+        },
+        {
+            "expected": "gn_ge",
+            "chamber": 58
+        },
+        {
+            "expected": "br",
+            "chamber": 59
+        },
+        {
+            "expected": "gn",
+            "chamber": 60
+        },
+        {
+            "expected": "bl_ge",
+            "chamber": 61
+        },
+        {
+            "expected": "bl_ge",
+            "chamber": 62
+        },
+        {
+            "expected": "gr",
+            "chamber": 63
+        },
+        {
+            "expected": "vi",
+            "chamber": 64
+        },
+        {
+            "expected": "gr_ge",
+            "chamber": 65
+        },
+        {
+            "expected": "gr_ge",
+            "chamber": 66
+        },
+        {
+            "expected": "gn",
+            "chamber": 67
+        },
+        {
+            "expected": "bl",
+            "chamber": 68
+        },
+        {
+            "expected": "gr_ge",
+            "chamber": 69
+        },
+        {
+            "expected": "gr_ge",
+            "chamber": 70
+        },
+        {
+            "expected": "br",
+            "chamber": 71
+        },
+        {
+            "expected": "gn",
+            "chamber": 72
+        },
+        {
+            "expected": "sw_ge",
+            "chamber": 73
+        },
+        {
+            "expected": "sw_ge",
+            "chamber": 74
+        },
+        {
+            "expected": "gr",
+            "chamber": 75
+        },
+        {
+            "expected": "rt",
+            "chamber": 80
+        },
+        {
+            "expected": "ws",
+            "chamber": 81
+        },
+        {
+            "expected": "br_ws",
+            "chamber": 82
+        },
+        {
+            "expected": "bl_ge",
+            "chamber": 83
+        },
+        {
+            "expected": "gn_ge",
+            "chamber": 88
+        },
+        {
+            "expected": "br_vi",
+            "chamber": 89
+        },
+        {
+            "expected": "br_gr",
+            "chamber": 90
+        },
+        {
+            "expected": "sw_gr",
+            "chamber": 91
+        },
+        {
+            "expected": "bl",
+            "chamber": 92
+        },
+        {
+            "expected": "br_bl",
+            "chamber": 93
+        },
+        {
+            "expected": "br_sw",
+            "chamber": 94
+        },
+        {
+            "expected": "sw",
+            "chamber": 95
+        },
+        {
+            "expected": "bl_ws",
+            "chamber": 96
+        },
+        {
+            "expected": "br_ws",
+            "chamber": 97
+        },
+        {
+            "expected": "br_ge",
+            "chamber": 98
+        },
+        {
+            "expected": "bl",
+            "chamber": 99
+        },
+        {
+            "expected": "vi",
+            "chamber": 100
+        },
+        {
+            "expected": "vi_ws",
+            "chamber": 101
+        },
+        {
+            "expected": "rs_gn",
+            "chamber": 103
+        },
+        {
+            "expected": "rt_bl",
+            "chamber": 105
+        }
+    ]
+}
