@@ -13,6 +13,8 @@ gi.require_version('Gst', '1.0')
 gi.require_version('GstVideo', '1.0')
 from gi.repository import Gst, GObject, GstVideo
 from PyQt5 import QtWidgets
+import cv2
+
 
 
 parser = argparse.ArgumentParser(description = "shows camera stream and overlays the connector dimensions.\nto edit the dimensions, please edit the csv file directly.\nto reload the csv file, press reload",
@@ -427,6 +429,61 @@ def move_annotation(annotations, annotation_idx, delta_x, delta_y):
                     QMainWindow.bottom[idx] = self.y_end + 0.5*y_size
                     QMainWindow.selected_box = idx
                     break
+					
+# select and move multiple rectangles
+# define window name
+
+
+
+
+selected_rectangles = []
+is_ctrl_pressed = False
+
+def mouse_callback(event, x, y, flags, params):
+    global selected_rectangles, is_ctrl_pressed
+    if event == cv2.EVENT_LBUTTONDOWN:
+        for rect in rectangles:
+            if x >= rect[0] and x <= rect[0]+rect[2] and y >= rect[1] and y <= rect[1]+rect[3]:
+                if not is_ctrl_pressed:
+                    selected_rectangles = [rect]  # select only one rectangle
+                else:
+                    if rect in selected_rectangles:
+                        selected_rectangles.remove(rect)  # deselect if already selected
+                    else:
+                        selected_rectangles.append(rect)  # select if not already selected
+
+    if event == cv2.EVENT_MOUSEMOVE and flags == cv2.EVENT_FLAG_LBUTTON:
+        if selected_rectangles:
+            dx = x - selected_rectangles[0][0]
+            dy = y - selected_rectangles[0][1]
+            for rect in selected_rectangles:
+                rect[0] += dx
+                rect[1] += dy
+
+cv2.namedWindow(window_name)
+cv2.setMouseCallback(window_name, mouse_callback)
+
+while True:
+    img_disp = img.copy()
+    draw_rectangles(img_disp, rectangles)
+    cv2.imshow(window_name, img_disp)
+    key = cv2.waitKey(1) & 0xFF
+    if key == ord('q'):
+        break
+    elif key == ord('d'):
+        for rect in selected_rectangles:
+            rectangles.remove(rect)
+        selected_rectangles = []
+    elif key == ord('c'):
+        selected_rectangles = []
+    elif key == 17:  # Ctrl key
+        is_ctrl_pressed = True
+    elif key == ord('a'):
+        is_ctrl_pressed = False
+
+cv2.destroyAllWindows()
+
+
 
 if __name__ == "__main__":
     # ask for connector name
