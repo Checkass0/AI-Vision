@@ -12,6 +12,8 @@ import gi
 gi.require_version('Gst', '1.0')
 gi.require_version('GstVideo', '1.0')
 from gi.repository import Gst, GObject, GstVideo
+from PyQt5 import QtWidgets
+
 
 parser = argparse.ArgumentParser(description = "shows camera stream and overlays the connector dimensions.\nto edit the dimensions, please edit the csv file directly.\nto reload the csv file, press reload",
                                 formatter_class=argparse.RawTextHelpFormatter)
@@ -223,22 +225,41 @@ class FirstWindow(QWidget):
 
             video_output.Render(self.img)
 
-
 class VideoWidget(QWidget):
+    def __init__(self, parent=None):
+        QWidget.__init__(self, parent=parent)
+        self.video_frame = QLabel()
+        lay = QVBoxLayout()
+        lay.addWidget(self.video_frame)
+        self.setLayout(lay)
+
+    def mousePressEvent(self, event):
+        pass
+
+
+class VideoWidget(QtWidgets.QWidget):
     def __init__(self, parent):
-        QMainWindow.__init__(self, parent)
+        super().__init__(parent)
         self.windowId = self.winId()
-        # self.setStyleSheet("background-color: black")
-        # self.setFixedSize(width,height)
         self.mousePressEvent = self.mousePressed
         self.mouseReleaseEvent = self.mouseReleased
         self.mouseMoveEvent = self.mouseMoved
-        # self.keyPressEvent = self.delete_boxes
-        # self.mouseDoubleClickEvent = self.mouseRightClick
         self.x_start = 0
         self.y_start = 0
         self.x_end = 0
         self.y_end = 0
+
+
+    def mousePressed(self, event):
+        self.x_start = event.x()
+        self.y_start = event.y()
+
+    def mouseReleased(self, event):
+        self.x_end = event.x()
+        self.y_end = event.y()
+
+    def mouseMoved(self, event):
+        pass
 
     def setup_pipeline(self):
         self.pipeline = Gst.parse_launch("intervideosrc channel=v0 ! xvimagesink")
@@ -258,6 +279,59 @@ class VideoWidget(QWidget):
 
     def  start_pipeline(self):
         self.pipeline.set_state(Gst.State.PLAYING)
+
+
+def move_annotation(annotations, annotation_idx, delta_x, delta_y):
+    if isinstance(annotation_idx, int):
+        annotation = annotations[annotation_idx]
+        move_annotations([annotation], delta_x, delta_y)
+    else:
+        annotations_to_move = [annotations[idx] for idx in annotation_idx]
+        move_annotations(annotations_to_move, delta_x, delta_y)
+
+    selected_annotations = []
+
+    def on_mouse(event, x, y, flags, param):
+        global selected_annotations
+    
+        if event == cv2.EVENT_LBUTTONDOWN:
+            for idx, annotation in enumerate(annotations):
+                if x >= annotation['left'] and x <= annotation['right'] and y >= annotation['top'] and y <= annotation['bottom']:
+                    selected_annotations.append(idx)
+                    break
+    
+        elif event == cv2.EVENT_RBUTTONDOWN:
+            # Clear the list of selected annotations
+            selected_annotations.clear()
+    
+        # Draw the selected annotations
+        for idx in selected_annotations:
+            annotation = annotations[idx]
+            cv2.rectangle(img, (annotation['left'], annotation['top']), (annotation['right'], annotation['bottom']), (0, 255, 0), 2)
+
+    def on_key(event, key, *args):
+        if key == 27:
+            # ESC key
+            cv2.destroyAllWindows()
+            exit()
+        elif key == ord('q'):
+            # Quit editing mode
+            return False
+        elif key == ord('up'):
+            # Move the selected annotations up
+            move_annotation(annotations, selected_annotations, 0, -10)
+        elif key == ord('down'):
+            # Move the selected annotations down
+            move_annotation(annotations, selected_annotations, 0, 10)
+        elif key == ord('left'):
+            # Move the selected annotations left
+            move_annotation(annotations, selected_annotations, -10, 0)
+        elif key == ord('right'):
+            # Move the selected annotations right
+            move_annotation(annotations, selected_annotations, 10, 0)
+
+
+
 
     def mousePressed(self, event):
         self.x_start, self.y_start = self.getMousePos(event)
