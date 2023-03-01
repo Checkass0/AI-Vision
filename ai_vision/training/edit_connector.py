@@ -439,10 +439,8 @@ class BoxEditor:
                 curr_boxes = []
                 for box in self.boxes:
                     x1, y1, x2, y2 = box
-                    if self.mouse_x >= x1 and self.mouse_x
-                    and self.mouse_x <= x2
-                    and self.mouse_y >= y1
-                    and self.mouse_y <= y2:
+                    if self.mouse_x >= x1 and self.mouse_x <= x2 and self.mouse_y >= y1 and self.mouse_y <= y2:
+
                         curr_boxes.append(box)
                 
                 # Markiere die ausgewählten Bounding Boxes
